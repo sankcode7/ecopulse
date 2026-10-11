@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>EcoPulse Campus</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="container">
+
+    <header>
+      <p class="eyebrow">ENVIRONMENTAL AWARENESS</p>
+      <h1>🌿 EcoPulse Campus</h1>
+      <p>Understand your air. Make healthier choices.</p>
+    </header>
+
+    <!-- Main air-quality dashboard -->
+    <section class="card">
+      <p class="label">YOUR LOCATION</p>
+
+      <label for="citySelect">Choose your city:</label>
+
+      <select id="citySelect">
+        <option value="delhi">Delhi</option>
+        <option value="mumbai">Mumbai</option>
+        <option value="bengaluru">Bengaluru</option>
+        <option value="chennai">Chennai</option>
+        <option value="kolkata">Kolkata</option>
+      </select>
+
+      <h2 id="location">Delhi, India</h2>
+      <p id="updated">Waiting for air-quality data...</p>
+
+      <div class="aqi-box">
+        <p class="label">US AIR QUALITY INDEX</p>
+        <div id="aqi" class="aqi-number">--</div>
+        <h2 id="category">Loading...</h2>
+        <p id="description">Fetching the latest available reading.</p>
+      </div>
+
+      <div class="details">
+        <div>
+          <p class="label">PM2.5</p>
+          <strong id="pm25">--</strong>
+          <span>µg/m³</span>
+        </div>
+
+        <div>
+          <p class="label">PM10</p>
+          <strong id="pm10">--</strong>
+          <span>µg/m³</span>
+        </div>
+      </div>
+
+      <div class="advice">
+        <h3>💡 What should you do?</h3>
+        <p id="recommendation">Checking current conditions...</p>
+      </div>
+
+      <p id="error" class="error" role="alert"></p>
+
+      <button id="refreshBtn" type="button">
+        Refresh air quality
+      </button>
+
+      <p class="source">
+        Data: Open-Meteo Air Quality API · US AQI scale
+      </p>
+    </section>
+
+    <!-- City comparison section -->
+    <section class="comparison-section">
+      <h2>Compare Air Quality Across Cities</h2>
+
+      <p class="comparison-intro">
+        Compare the latest available air-quality readings.
+      </p>
+
+      <button id="compareBtn" type="button">
+        Refresh comparison
+      </button>
+
+      <p id="comparisonStatus" aria-live="polite">
+        Loading city comparison...
+      </p>
+
+      <div id="comparisonGrid" class="comparison-grid"></div>
+
+      <p class="source">
+        Data: Open-Meteo Air Quality API. Lower US AQI indicates
+        better air quality under this scale. Model-based readings
+        may differ from official monitoring stations.
+      </p>
+    </section>
+
+    <footer>
+      Educational project by EcoPulse Campus
+    </footer>
+
+  </main>
+</body>
+</html>
